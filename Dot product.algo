@@ -1,0 +1,33 @@
+ALGORITHM dot_product
+PROCEDURE dot_product( VAR V1:ARRAY_OF FLOAT[M] , VAR V2: ARRAY_OF FLOAT[M])
+VAR 
+   PS:  FLOAT;
+BEGIN
+   FOR i FROM 0 TO M-1 DO
+    FOR j FROM 0 TO M-1 DO
+            PS:= PS+ V1[i] * V2[j]
+        
+    END_FOR
+END_FOR
+        
+END  
+VAR  
+  vectors: ARRAY_OF FLOAT[N][M]
+  v1 , v2 : ARRAY_OF FLOAT
+BEGIN
+ 
+FOR i FROM 0 TO N-1 STEP 1  DO
+FOR j FROM 0 TO M-1 STEP 1  DO
+   READ vectors[i][j] 
+END_FOR    
+END_FOR  
+ READ indice_colone1
+ READ indice_colone2
+ v1=vectors(:indice-colone1)
+ v2=vectors(: indice-colone2)
+
+ IF (dot_product2(v1 , v2)=0) THEN
+         write ("v1 and v2 are ortogonal")
+END_IF    
+   
+
